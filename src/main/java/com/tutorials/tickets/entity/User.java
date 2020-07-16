@@ -13,17 +13,17 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
-@Table("users")
+@Table(name = "users")
 public class User {
     
     @Id
     @NotNull
-    @Column("id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name="user_generator", sequenceName = "user_seq")
     private Long id;
     
-    @Column("name")
+    @Column(name = "name")
     @NotNull
     private String name;
     
