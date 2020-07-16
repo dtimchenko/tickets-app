@@ -18,32 +18,32 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table("tickets")
+@Table(name = "tickets")
 public class Ticket {
     
     @Id
     @NotNull
-    @Column("id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name="ticket_generator", sequenceName = "ticket_seq")
     private Long id;
     
-    @Column("title")
+    @Column(name = "title")
     @NotNull
     private String title;
     
-    @Column("description")
+    @Column(name = "description")
     private String description;
     
-    @Column("status")
+    @Column(name = "status")
     @NotNull
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
     
-    @Column("original_estimate")
+    @Column(name = "original_estimate")
     private Integer originalEstimate;
     
-    @Column("logged_time")
+    @Column(name = "logged_time")
     private Integer loggedTime;
     
     @NotNull
@@ -55,11 +55,11 @@ public class Ticket {
     @JoinColumn(name = "assignee_id")
     private User assignee;
     
-    @Column("creation_time")
+    @Column(name = "creation_time")
     @NotNull
     private LocalDateTime creationTime;
     
     @NotNull
-    @Column("last_update_time")
+    @Column(name = "last_update_time")
     private LocalDateTime lastUpdateTime;
 }

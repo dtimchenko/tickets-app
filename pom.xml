@@ -18,6 +18,8 @@
 	<properties>
 		<java.version>14</java.version>
 		<lombok.version>1.18.12</lombok.version>
+        <liquibase.version>3.8.9</liquibase.version>
+        <postgres.version>9.4.1208</postgres.version>
 	</properties>
 
 	<dependencies>
@@ -50,6 +52,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgres.version}</version>
+        </dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -69,6 +77,14 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>${liquibase.version}</version>
+                <configuration>
+                    <propertyFile>src/main/resources/liquibase/liquibase.properties</propertyFile>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
