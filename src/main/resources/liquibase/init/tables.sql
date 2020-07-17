@@ -1,5 +1,11 @@
 --liquibase formatted sql
 
+--changeset dmytro.timchenko:ticket_seq-creation
+CREATE SEQUENCE ticket_seq;
+
+--changeset dmytro.timchenko:user_seq-creation
+CREATE SEQUENCE user_seq;
+
 --changeset dmytro.timchenko:tickets-creation
 create table if not exists users(
     id bigint PRIMARY KEY,
