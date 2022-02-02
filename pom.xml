@@ -19,7 +19,7 @@
 		<java.version>14</java.version>
 		<lombok.version>1.18.12</lombok.version>
         <liquibase.version>3.8.9</liquibase.version>
-        <postgres.version>9.4.1208</postgres.version>
+        <postgres.version>42.2.25</postgres.version>
 	</properties>
 
 	<dependencies>
